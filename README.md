@@ -1,12 +1,14 @@
 # FTD Backup Automation
 
-FDM can trigger an on-demand backup just fine, but it can't schedule one on
-its own, and it can't send it anywhere except the device itself. Backups
-stay stored locally, aren't kept for long, and get wiped outright on an
-upgrade. That's exactly what this tool fixes: it triggers a backup on the
-FTD, downloads it, then uploads it to an FTP (or FTPS) server of your
-choice -- ready to drop on a scheduled task (cron at night, Windows Task
-Scheduler, etc.).
+FDM can schedule backups on its own, but it can't send them anywhere except
+the device itself -- backups stay stored locally, with no automated way to
+get a copy off-box. Cisco's own upgrade guidance recommends downloading a
+backup before upgrading, which says a lot on its own about how much you
+want to rely on what's sitting on the appliance. That's exactly what this
+tool fixes: it triggers a backup on the FTD, downloads it, then uploads it
+to an FTP (or FTPS) server of your choice -- ready to drop on a scheduled
+task (cron at night, Windows Task Scheduler, etc.) for real off-box
+retention.
 
 Everything needed to run it is already in this repo; no other tooling
 required.
