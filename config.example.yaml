@@ -1,0 +1,20 @@
+# Copy to config.yaml and fill in. Do not commit config.yaml (it holds credentials).
+
+ftd:
+  host: "10.0.0.5"          # FTD management IP/FQDN (FDM UI address)
+  port: 443
+  username: "admin"
+  password: "changeme"
+  verify_ssl: false          # true once you install a trusted mgmt cert
+  # ca_bundle: "C:\\path\\to\\ca.pem"   # used only if verify_ssl: true
+
+options:
+  dry_run: true              # print what would be sent instead of calling the API/FTP server
+
+description: "Automated backup"
+ftp:
+  host: "10.0.0.50"
+  port: 21
+  username: "ftduser"
+  remote_dir: "/ftd-backups"
+  tls: false                 # true for FTPS (explicit TLS) -- plain FTP sends the backup unencrypted
